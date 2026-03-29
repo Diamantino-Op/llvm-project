@@ -314,6 +314,8 @@ StringRef Triple::getOSTypeName(OSType Kind) {
   case MacOSX: return "macosx";
   case Managarm:
     return "managarm";
+  case HorizonOS:
+    return "horizonos";
   case Mesa3D: return "mesa3d";
   case NVCL: return "nvcl";
   case NetBSD: return "netbsd";
@@ -724,6 +726,7 @@ static Triple::OSType parseOS(StringRef OSName) {
       .StartsWith("lv2", Triple::Lv2)
       .StartsWith("macos", Triple::MacOSX)
       .StartsWith("managarm", Triple::Managarm)
+      .StartsWith("horizonos", Triple::HorizonOS)
       .StartsWith("netbsd", Triple::NetBSD)
       .StartsWith("openbsd", Triple::OpenBSD)
       .StartsWith("solaris", Triple::Solaris)

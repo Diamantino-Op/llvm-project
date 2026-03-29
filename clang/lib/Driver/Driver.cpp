@@ -26,6 +26,7 @@
 #include "ToolChains/HIPAMD.h"
 #include "ToolChains/HIPSPV.h"
 #include "ToolChains/HLSL.h"
+#include "ToolChains/HorizonOS.h"
 #include "ToolChains/Haiku.h"
 #include "ToolChains/Hexagon.h"
 #include "ToolChains/Hurd.h"
@@ -7071,6 +7072,9 @@ const ToolChain &Driver::getToolChain(const ArgList &Args,
       break;
     case llvm::Triple::Managarm:
       TC = std::make_unique<toolchains::Managarm>(*this, Target, Args);
+      break;
+    case llvm::Triple::HorizonOS:
+      TC = std::make_unique<toolchains::HorizonOS>(*this, Target, Args);
       break;
     case llvm::Triple::Solaris:
       TC = std::make_unique<toolchains::Solaris>(*this, Target, Args);
