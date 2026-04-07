@@ -119,13 +119,12 @@ std::string HorizonOS::computeSysRoot() const {
 std::string HorizonOS::getDynamicLinker(const ArgList &Args) const {
   switch (getTriple().getArch()) {
   case llvm::Triple::aarch64:
-    return "/lib/aarch64-horizonos/ld.so";
+    return "/lib/aarch64-horizonos-mlibc-ld.so";
   case llvm::Triple::riscv64: {
-    StringRef ABIName = tools::riscv::getRISCVABI(Args, getTriple());
-    return ("/lib/riscv64-horizonos/ld-riscv64-" + ABIName + ".so").str();
+    return "/lib/riscv64-horizonos-mlibc-ld.so";
   }
   case llvm::Triple::x86_64:
-    return "/lib/x86_64-horizonos/ld.so";
+    return "/lib/x86_64-horizonos-mlibc-ld.so";
   default:
     llvm_unreachable("unsupported architecture");
   }

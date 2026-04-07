@@ -455,6 +455,7 @@ class LLVM_LIBRARY_VISIBILITY HorizonOSTargetInfo : public OSTargetInfo<Target> 
                       MacroBuilder &Builder) const override {
         DefineStd(Builder, "unix", Opts);
         Builder.defineMacro("__horizonos__");
+        Builder.defineMacro("__mlibc__");
         if (Opts.POSIXThreads)
             Builder.defineMacro("_REENTRANT");
         if (Opts.CPlusPlus)
