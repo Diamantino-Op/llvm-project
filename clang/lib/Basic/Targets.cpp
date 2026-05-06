@@ -682,6 +682,7 @@ std::unique_ptr<TargetInfo> AllocateTarget(const llvm::Triple &Triple,
                                                                     Opts);
     case llvm::Triple::Serenity:
       return std::make_unique<SerenityTargetInfo<X86_64TargetInfo>>(Triple,
+                                                                    Opts);
     case llvm::Triple::HorizonOS:
       return std::make_unique<HorizonOSTargetInfo<X86_64TargetInfo>>(Triple,
                                                                     Opts);
