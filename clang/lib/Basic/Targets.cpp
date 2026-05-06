@@ -168,6 +168,9 @@ std::unique_ptr<TargetInfo> AllocateTarget(const llvm::Triple &Triple,
     case llvm::Triple::Managarm:
       return std::make_unique<ManagarmTargetInfo<AArch64leTargetInfo>>(Triple,
                                                                        Opts);
+    case llvm::Triple::HorizonOS:
+      return std::make_unique<HorizonOSTargetInfo<AArch64leTargetInfo>>(Triple,
+                                                                       Opts);
     case llvm::Triple::NetBSD:
       return std::make_unique<NetBSDTargetInfo<AArch64leTargetInfo>>(Triple,
                                                                      Opts);
@@ -478,6 +481,9 @@ std::unique_ptr<TargetInfo> AllocateTarget(const llvm::Triple &Triple,
     case llvm::Triple::Managarm:
       return std::make_unique<ManagarmTargetInfo<RISCV64TargetInfo>>(Triple,
                                                                      Opts);
+    case llvm::Triple::HorizonOS:
+      return std::make_unique<HorizonOSTargetInfo<RISCV64TargetInfo>>(Triple,
+                                                                     Opts);
     case llvm::Triple::Hurd:
       return std::make_unique<HurdTargetInfo<RISCV64TargetInfo>>(Triple, Opts);
 
@@ -676,6 +682,8 @@ std::unique_ptr<TargetInfo> AllocateTarget(const llvm::Triple &Triple,
                                                                     Opts);
     case llvm::Triple::Serenity:
       return std::make_unique<SerenityTargetInfo<X86_64TargetInfo>>(Triple,
+    case llvm::Triple::HorizonOS:
+      return std::make_unique<HorizonOSTargetInfo<X86_64TargetInfo>>(Triple,
                                                                     Opts);
     default:
       return std::make_unique<X86_64TargetInfo>(Triple, Opts);

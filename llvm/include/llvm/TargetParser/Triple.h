@@ -222,6 +222,7 @@ public:
     Lv2, // PS3
     MacOSX,
     Managarm,
+    HorizonOS,
     NetBSD,
     OpenBSD,
     Solaris,
@@ -863,6 +864,8 @@ public:
   bool isVulkanOS() const { return getOS() == Triple::Vulkan; }
 
   bool isOSManagarm() const { return getOS() == Triple::Managarm; }
+
+  bool isOSHorizonOS() const { return getOS() == Triple::HorizonOS; }
 
   bool isOSFirmware() const { return getOS() == Triple::Firmware; }
 

@@ -465,6 +465,8 @@ StringRef Triple::getOSTypeName(OSType Kind) {
     return "uefi";
   case WASI:
     return "wasi";
+  case HorizonOS:
+    return "horizonos";
   case WASIp1:
     return "wasip1";
   case WASIp2:
@@ -925,6 +927,7 @@ static Triple::OSType parseOS(StringRef OSName) {
       .StartsWith("lv2", Triple::Lv2)
       .StartsWith("macos", Triple::MacOSX)
       .StartsWith("managarm", Triple::Managarm)
+      .StartsWith("horizonos", Triple::HorizonOS)
       .StartsWith("netbsd", Triple::NetBSD)
       .StartsWith("openbsd", Triple::OpenBSD)
       .StartsWith("solaris", Triple::Solaris)
