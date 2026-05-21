@@ -56,6 +56,8 @@ _LIBCPP_CLANG_DIAGNOSTIC_IGNORED("-Wmissing-prototypes")
 [[gnu::weak]] string_view __libcpp_tzdb_directory() {
 #if defined(__linux__)
   return "/usr/share/zoneinfo/";
+#elif defined(__horizonos__)
+  return "/usr/share/zoneinfo/";
 #else
 #  error "unknown path to the IANA Time Zone Database"
 #endif
