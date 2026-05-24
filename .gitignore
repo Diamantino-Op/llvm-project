@@ -27,7 +27,10 @@
 /*/CMakeUserPresets.json
 
 # Nested build directory
-/build*
+/build
+/build-cxx
+/build-rt-builtins
+usr/bin
 
 #==============================================================================#
 # Explicit files to ignore (only matches one).
